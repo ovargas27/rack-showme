@@ -1,0 +1,12 @@
+#show-me-message {
+	border-bottom: 1px solid #999;
+	border-right: 1px solid #999;
+  position: fixed;
+  top: 0;
+  left: 0;
+	padding: 4px 7px;
+	background-color: #FFF8C6;
+	color: #333;
+	cursor: pointer;
+	z-index: 2147483640;
+}
