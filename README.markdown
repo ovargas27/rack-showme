@@ -10,7 +10,10 @@ Add the following line to your Gemfile
 	gem "rack-showme"
 ```
 
-Then add the following lines to your application.rb file
+Maybe you want to use it only for some enviroments.
+
+Then add the following lines to your enviroment file e.g. `config/environments/development.rb`
+
 
 ```ruby
   require "rack/showme
