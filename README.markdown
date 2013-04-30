@@ -21,3 +21,7 @@ Then add the following lines to your enviroment file e.g. `config/environments/d
   Rack::Showme::Options.message = "Development"
 ```
 
+## ScreenShots
+
+![Screenshot](doc/images/default.png)
+
