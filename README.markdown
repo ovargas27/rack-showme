@@ -2,7 +2,7 @@
 
 Rack middleware that injects a message into HTML responses.
 
-> By _message_ I mean a <div> element
+> By _message_ I mean a div element
 
 This give us the ability to, for example, add a message indicating that the server is staging or any other QA environment without have to modify our code base
 
