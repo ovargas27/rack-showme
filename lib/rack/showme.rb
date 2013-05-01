@@ -1,4 +1,5 @@
 require "rack/showme/options"
+require "rack/showme/message_box"
 
 module Rack
   class Showme 
@@ -30,11 +31,11 @@ module Rack
 
     def inject_html
       css_line = %Q{<style type="text/css">#{read_public_file("showme.css")}</style>\n}
-      code = "<div id=\"show-me-message\"> #{Options.message}</div>"
+      message_box = MessageBox.new(Options).html 
 
       body = @response.body
-      body.gsub!("<body>", "<body>#{code}")
       body.gsub!("</body>", "#{css_line}</body>")
+      body.gsub!("<body>", "<body>#{message_box}")
       @response.body = body
 
       @headers["Content-Length"] = @response.body.bytesize.to_s
