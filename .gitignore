@@ -1,2 +1,4 @@
 rack-showme-*.gem
 *.swp
+.DS_Store
+
