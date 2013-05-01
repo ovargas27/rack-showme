@@ -2,6 +2,8 @@
 
 Rack middleware that injects a message into HTML responses.
 
+> By _message_ I mean a <div> element
+
 This give us the ability to, for example, add a message indicating that the server is staging or any other QA environment without have to modify our code base
 
 ## Using with Rails
@@ -28,10 +30,12 @@ Then add the following lines to an enviroment file e.g. `config/environments/dev
 You can select between three colorschemes `yellow`, `green` and `red`
 
 ```ruby
+  Rack::Showme::Options.colorscheme= "yellow"
+  Rack::Showme::Options.colorscheme= "green"
   Rack::Showme::Options.colorscheme= "red"
 ```
 
-This is useful to easily distinguish between diferent enviroments e.g. development, and staging
+This is useful to easily distinguish between diferent enviroments e.g. development and staging
 
 ## Information
 
@@ -49,7 +53,7 @@ Simple rails app without **Rack::Showme**
 
 ![Screenshot](doc/images/normal.png)
 
-Default colorscheme
+Default colorscheme (yellow)
 
 ![Screenshot](doc/images/default.png)
 
