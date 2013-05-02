@@ -6,10 +6,10 @@ class TestMessageBox < MiniTest::Unit::TestCase
   end
 
   def test_html_include_showme_id
-    assert_match @message_box.html, /id=\"rack-show-me-message-box\"/
+    assert_match /id=\"rack-show-me-message-box\"/, @message_box.html
   end
   
   def test_html_include_colorscheme_class
-    assert_match @message_box.html, /class=\"rack-show-me-colorscheme/
+    assert_match /class=\"rack-show-me-colorscheme/, @message_box.html
   end
 end
