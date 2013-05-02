@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rack-showme (0.0.2.pre)
+    rack-showme (0.0.2.1)
 
 GEM
   remote: http://rubygems.org/
@@ -13,4 +13,4 @@ PLATFORMS
 
 DEPENDENCIES
   rack-showme!
-  rake
+  rake (~> 10.0.4)

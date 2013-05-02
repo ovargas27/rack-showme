@@ -1,6 +1,8 @@
 source "http://rubygems.org"
 
-gem 'rake', :group => :development
+group :development, :test do
+  gem 'rake', '~> 10.0.4'
+end
 
 # Specify your gem's dependencies in rack-showme.gemspec
 gemspec
