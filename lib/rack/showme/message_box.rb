@@ -15,17 +15,18 @@ module Rack
       end
 
       def colorscheme_class
-        case @colorscheme
-        when "yellow"
-          "rack-show-me-colorscheme-yellow"
-        when "red"
-          "rack-show-me-colorscheme-red"
-        when "green"
-          "rack-show-me-colorscheme-green"
-        else
-          "rack-show-me-colorscheme-yellow"
-        end
+        @colors = %W[yellow red green]
+        @colors.include?(@colorscheme) ? custome_class_name : default_class_name
       end 
+
+      private
+      def default_class_name
+        "rack-show-me-colorscheme-#{@colors.first}"
+      end
+
+      def custome_class_name
+        "rack-show-me-colorscheme-#{@colorscheme}"
+      end
     end
   end
 end
