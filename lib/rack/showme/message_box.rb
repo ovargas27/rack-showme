@@ -16,7 +16,7 @@ module Rack
 
       def colorscheme_class
         @colors = %W[yellow red green]
-        @colors.include?(@colorscheme) ? custome_class_name : default_class_name
+        @colors.include?(@colorscheme) ? custom_class_name : default_class_name
       end 
 
       private
@@ -24,7 +24,7 @@ module Rack
         "rack-show-me-colorscheme-#{@colors.first}"
       end
 
-      def custome_class_name
+      def custom_class_name
         "rack-show-me-colorscheme-#{@colorscheme}"
       end
     end
