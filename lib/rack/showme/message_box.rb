@@ -1,6 +1,9 @@
 module Rack
   class Showme
     class MessageBox
+      COLORS = %w[yellow red green].freeze
+      PREFIX = 'rack-show-me-colorscheme'
+
       def initialize(options)
         @message = options.message
         @colorscheme = options.colorscheme
@@ -15,17 +18,17 @@ module Rack
       end
 
       def colorscheme_class
-        case @colorscheme
-        when "yellow"
-          "rack-show-me-colorscheme-yellow"
-        when "red"
-          "rack-show-me-colorscheme-red"
-        when "green"
-          "rack-show-me-colorscheme-green"
-        else
-          "rack-show-me-colorscheme-yellow"
-        end
+        COLORS.include?(@colorscheme) ? custom_class_name : default_class_name
       end 
+
+      private
+      def default_class_name
+        "#{PREFIX}-#{COLORS.first}"
+      end
+
+      def custom_class_name
+        "#{PREFIX}-#{@colorscheme}"
+      end
     end
   end
 end
