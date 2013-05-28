@@ -67,3 +67,11 @@ Red colorscheme
 
 ![Screenshot](doc/images/red.png)
 
+## LICENSE
+
+MIT License Copyright 2013 Nearsoft
+
+## About the Author
+
+[Nearsoft](http://www.nearsoft.com/the-nearsoft-quick-intro.html) is a software product development service, with operations in Mexico. We work with ISVs, SaaS companies and consumer-facing sites. Thanks to our software engineering approach and experience, we help our clients get their products (and their companies) out to market faster. 
+

@@ -8,9 +8,10 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Omar Vargas"]
   s.email       = ["ovargas27@gmail.com"]
-  s.homepage    = "https://github.com/ovargas27/rack-showme"
+  s.homepage    = "https://github.com/Nearsoft/rack-showme"
   s.summary     = %q{Injects a message into HTML responses.}
   s.description =  %q{Rack middleware that injects a message into HTML responses.}
+  s.license     = "MIT"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test}/*`.split("\n")
