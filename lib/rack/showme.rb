@@ -2,7 +2,7 @@ require "rack/showme/options"
 require "rack/showme/message_box"
 
 module Rack
-  class Showme 
+  class Showme
     def initialize(app)
       @app = app
     end
@@ -21,8 +21,12 @@ module Rack
       @env["HTTP_X_REQUESTED_WITH"] == "XMLHttpRequest"
     end
 
+    def response_compatible?
+      @response.respond_to?(:body)
+    end
+
     def initial_page_request?
-      !ajax_request? && html_response?
+      !ajax_request? && html_response? && response_compatible?
     end
 
     def html_response?
@@ -31,7 +35,7 @@ module Rack
 
     def inject_html
       css_line = %Q{<style type="text/css">#{read_public_file("showme.css")}</style>\n}
-      message_box = MessageBox.new(Options).html 
+      message_box = MessageBox.new(Options).html
 
       body = @response.body
       body.gsub!("</body>", "#{css_line}</body>")
