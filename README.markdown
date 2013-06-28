@@ -1,6 +1,6 @@
 # Rack::Showme
 
-[![Build Status](https://travis-ci.org/ovargas27/rack-showme.png?branch=master)](https://travis-ci.org/ovargas27/rack-showme)
+[![Build Status](https://travis-ci.org/Nearsoft/rack-showme.png?branch=master)](https://travis-ci.org/Nearsoft/rack-showme)
 
 Rack middleware that injects a message into HTML responses.
 
