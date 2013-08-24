@@ -1,0 +1,29 @@
+/* Default breakpoints
+ * aka jonathandean's breakpoints
+ * http://jonathandean.com/2013/01/showing-the-current-breakpoint-name-when-testing-responsive-designs-using-only-css/
+*/
+
+@media screen and (min-width: 960px){
+  #rack-show-me-breakpoints:before{
+    content: ' at desktop';
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width:959px){
+  #rack-show-me-breakpoints:before{
+    content: ' at tablet';
+  }
+}
+
+@media screen and (max-width: 767px){
+  #rack-show-me-breakpoints:before{
+    content: ' at mobile-portrait';
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width:767px){
+  #rack-show-me-breakpoints:before{
+    content: ' at mobile-landscape';
+  }
+}
+

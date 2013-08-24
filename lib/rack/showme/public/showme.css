@@ -1,26 +1,40 @@
 /* ribbon */
 #rack-show-me-message-box {
-	border-bottom: 1px solid #999;
-	border-right: 1px solid #999;
+  color: #333333;
+  border-bottom: 1px solid #999;
+  border-right: 1px solid #999;
   position: fixed;
   top: 0;
   left: 0;
-	padding: 4px 7px;
-	cursor: pointer;
-	z-index: 2147483640;
+  padding: 4px 7px;
+  cursor: pointer;
+  z-index: 2147483640;
+}
+
+#rack-show-me-breakpoints {
+  color: #333333;
+  border-bottom: 1px solid #999;
+  border-right: 1px solid #999;
+  position: fixed;
+  top: 29px;
+  left: 0;
+  padding: 4px 7px;
+  cursor: pointer;
+  z-index: 2147483640;
 }
 
 .rack-show-me-colorscheme-yellow {
-	background-color: #FFF8C6;
-	color: #333333;
+  background-color: #FFF8C6;
+  color: #333333;
 }
 
 .rack-show-me-colorscheme-red {
-	background-color: #FD0006;
-	color: #000000;
+  background-color: #FD0006;
+  color: #000000;
 }
 
 .rack-show-me-colorscheme-green {
-	background-color: #42e73A;
-	color: #333333;
+  background-color: #42e73A;
+  color: #333333;
 }
+

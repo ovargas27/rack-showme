@@ -1,5 +1,6 @@
 require "rack/showme/options"
 require "rack/showme/message_box"
+require "rack/showme/breakpoints_box"
 
 module Rack
   class Showme
@@ -33,16 +34,28 @@ module Rack
       @headers && @headers["Content-Type"] && @headers["Content-Type"].include?("text/html")
     end
 
-    def inject_html
-      css_line = %Q{<style type="text/css">#{read_public_file("showme.css")}</style>\n}
-      message_box = MessageBox.new(Options).html
+    def display_breakpoints?
+     @display_breakpoints ||= Options.show_breakpoints
+    end
 
+    def inject_html
       body = @response.body
       body.gsub!("</body>", "#{css_line}</body>")
-      body.gsub!("<body>", "<body>#{message_box}")
+      body.gsub!("<body>", "<body>#{show_boxes}")
       @response.body = body
 
       @headers["Content-Length"] = @response.body.bytesize.to_s
+    end
+
+    def css_line
+      files = ["showme.css"]
+      files << "showme.breakpoints.css" if display_breakpoints?
+      %Q{<style type="text/css">#{files.map{|file| read_public_file(file) }.join()}</style>\n}
+    end
+
+    def show_boxes
+      html_string = MessageBox.new(Options).html
+      html_string + BreakpointsBox.new(Options).html if display_breakpoints?
     end
 
     def read_public_file(filename)

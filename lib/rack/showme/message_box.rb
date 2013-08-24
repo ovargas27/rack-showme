@@ -21,7 +21,6 @@ module Rack
         COLORS.include?(@colorscheme) ? custom_class_name : default_class_name
       end 
 
-      private
       def default_class_name
         "#{PREFIX}-#{COLORS.first}"
       end
